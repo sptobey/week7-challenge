@@ -1,0 +1,120 @@
+h3 Results
+table.table.table-striped
+    thead
+        tr
+            th Name
+            th Description
+            th Cost
+            th Attack
+            th Health
+            th Durability
+            th Set
+            th Rarity
+            th Artist
+    tbody
+        
+        style.
+            card {
+                font-size: 20px;
+                color: #000000;
+            }
+        style.
+            misc {
+                font-size: 14px;
+                color: #000000;
+            }
+        style.
+            flavor {
+                font-size: 14px;
+                color: #B20000;
+            }
+        style.
+            race {
+                font-size: 14px;
+                color: #006B24;
+            }
+        style.
+            class {
+                font-size: 14px;
+                color: #7A007A;
+            }
+        style.
+            type {
+                font-size: 14px;
+                color: #009999;
+            }
+        style.
+            cost {
+                font-size: 16px;
+                color: #3333CC;
+            }
+        style.
+            att {
+                font-size: 16px;
+                color: #CC0000;
+            }
+        style.
+            def {
+                font-size: 16px;
+                color: #009933;
+            }
+        style.
+            dur {
+                font-size: 16px;
+                color: #999966;
+            }
+        style.
+            rar {
+                font-size: 16px;
+                color: #FFD119;
+            }
+        
+        each item in data
+            tr
+                td
+                    b
+                        card= item.name
+                    if item.race
+                        li
+                            i
+                                race= "Race: " + item.race
+                    if item.card_class
+                        li
+                            i
+                                class= "Class: " + item.card_class
+                    if item.card_type
+                        li
+                            i
+                                type= "Type: " + item.card_type
+                td
+                    li
+                        b
+                            misc= item.description
+                    li
+                        i
+                            flavor= item.flavour_text
+                td
+                    cost= item.cost
+                td
+                    if(item.attack)
+                        att= item.attack
+                    else
+                        misc= "--"
+                td
+                    if(item.health)
+                        def= item.health
+                    else
+                        misc= "--"
+                td
+                    if(item.durability)
+                        dur= item.durability
+                    else
+                        misc= "--"
+                td
+                    misc= item.set
+                td
+                    rar= item.rarity
+                td
+                    misc= item.artist
+
+
