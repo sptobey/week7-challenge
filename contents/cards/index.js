@@ -10,7 +10,7 @@ var cards = {
             success: function(data) {
                 if (data){
                     //console.log(data);
-                        $.get("/hearthstone/cards/list.jade", function(template) {
+                        $.get("/week7-challenge/cards/list.jade", function(template) {
                         var html = jade.render(template, {
                             data: data
                         })
@@ -31,7 +31,7 @@ var cards = {
             success: function(data) {
                 if (data){
                     //console.log(data);
-                        $.get("/hearthstone/cards/view.jade", function(template) {
+                        $.get("/week7-challenge/cards/view.jade", function(template) {
                         var html = jade.render(template, {
                             data: data
                         })
@@ -43,7 +43,7 @@ var cards = {
     },
 
     load: function() {
-        $.get("/hearthstone/cards/ui.jade", function(template) {
+        $.get("/week7-challenge/cards/ui.jade", function(template) {
             var html = jade.render(template);
             $("#searchdiv").html(html);
         })

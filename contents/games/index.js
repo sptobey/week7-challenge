@@ -13,7 +13,7 @@ var games = {
             success: function(data) {
                 if (data){
                     //console.log(data);
-                        $.get("/hearthstone/games/list.jade", function(template) {
+                        $.get("/week7-challenge/games/list.jade", function(template) {
                         var html = jade.render(template, {
                             data: data
                         })
@@ -25,7 +25,7 @@ var games = {
     },
 
     load: function() {
-        $.get("/hearthstone/games/ui.jade", function(template) {
+        $.get("/week7-challenge/games/ui.jade", function(template) {
             var html = jade.render(template);
             $("#searchdiv").html(html);
         })
